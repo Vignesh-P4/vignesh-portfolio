@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import SectionHeader from '@/components/SectionHeader';
 import ProjectCard from '@/components/ProjectCard';
@@ -131,9 +132,55 @@ export default function Home() {
           <div className="mx-auto max-w-6xl">
             <SectionHeader title="About Me" subtitle="Who I am" />
             <div className="glass-card p-8">
-              <p className="max-w-4xl leading-8 text-slate-300 text-lg">
-                I'm a passionate full-stack developer with over 3 years of experience crafting digital experiences.
-              </p>
+              <div className="space-y-6">
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-slate-300 text-lg leading-relaxed"
+                >
+                  I am a final-year <span className="gradient-text font-semibold">Data Science</span> student driven by a passion for building intelligent systems and impactful digital products.
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="text-slate-300 text-lg leading-relaxed"
+                >
+                  I specialize in combining data, <span className="gradient-text font-semibold">AI</span>, and <span className="gradient-text font-semibold">full-stack development</span> to create real-world solutions. My work includes developing an AI financial assistant, a health-focused platform, and an IoT-based agriculture system—each designed to solve practical problems.
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  viewport={{ once: true }}
+                  className="text-slate-300 text-lg leading-relaxed"
+                >
+                  Currently, as a Software/AI Intern, I am actively contributing to building scalable CRM systems, e-commerce platforms, and AI-powered features in a startup environment.
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  viewport={{ once: true }}
+                  className="text-slate-300 text-lg leading-relaxed"
+                >
+                  I believe in continuous learning, strong problem-solving, and building technology that creates real value.
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                  viewport={{ once: true }}
+                  className="pt-4 border-t border-slate-700/50"
+                >
+                  <p className="text-slate-400 text-sm">
+                    📍 Hyderabad, Telangana, India
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>

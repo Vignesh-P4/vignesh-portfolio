@@ -1,37 +1,31 @@
 'use client';
 
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
   {
     name: 'GitHub',
     icon: FaGithub,
-    url: 'https://github.com/vignesh',
+    url: 'https://github.com/Vignesh-P4',
     color: 'hover:text-gray-300'
   },
   {
     name: 'LinkedIn',
     icon: FaLinkedin,
-    url: 'https://linkedin.com/in/vignesh',
+    url: 'https://www.linkedin.com/in/vigneshpobbathi/',
     color: 'hover:text-blue-400'
   },
   {
     name: 'Instagram',
     icon: FaInstagram,
-    url: 'https://instagram.com/vignesh',
+    url: 'https://www.instagram.com/vignesh_pobbathi_/',
     color: 'hover:text-pink-400'
-  },
-  {
-    name: 'Twitter',
-    icon: FaTwitter,
-    url: 'https://twitter.com/vignesh',
-    color: 'hover:text-blue-300'
   },
   {
     name: 'Email',
     icon: FaEnvelope,
-    url: 'mailto:hello@vignesh.com',
+    url: 'mailto:vigneshpobbathi@gmail.com',
     color: 'hover:text-sky-400'
   }
 ];
@@ -69,7 +63,7 @@ export default function Contact() {
 
             <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
               <a
-                href="mailto:hello@vignesh.com"
+                href="mailto:vigneshpobbathi@gmail.com"
                 className="btn-primary inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-glow"
               >
                 <FaEnvelope className="mr-2 text-lg" />
