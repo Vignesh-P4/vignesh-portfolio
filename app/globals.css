@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  @apply box-border;
+}
+
+::selection {
+  @apply bg-sky-500/30 text-sky-100;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600;
+}
+
+/* Hero background with better overlay */
+.hero-background {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.8)),
+    linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Enhanced glass card with better blur and border */
+.glass-card {
+  @apply bg-slate-900/80 border border-slate-700/60 backdrop-blur-2xl shadow-2xl;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Section transitions */
+section {
+  @apply transition-all duration-700 ease-out;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transition-all duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-2 shadow-2xl;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+}
+
+/* Skill icon hover */
+.skill-icon {
+  @apply transition-all duration-300 ease-out;
+}
+
+.skill-icon:hover {
+  @apply scale-110 text-sky-400;
+}
+
+/* Social icon animations */
+.social-icon {
+  @apply transition-all duration-300 ease-out;
+}
+
+.social-icon:hover {
+  @apply scale-125 text-sky-400;
+}
+
+/* Button hover effects */
+.btn-primary {
+  @apply relative overflow-hidden bg-gradient-to-r from-sky-500 to-purple-600;
+}
+
+.btn-primary::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-purple-600 to-sky-500 opacity-0 transition-opacity duration-300;
+}
+
+.btn-primary:hover::before {
+  @apply opacity-100;
+}
+
+.btn-secondary {
+  @apply relative overflow-hidden border border-slate-600 bg-slate-900/80 backdrop-blur-sm;
+}
+
+.btn-secondary:hover {
+  @apply border-sky-400/50 bg-slate-800/80;
+}
