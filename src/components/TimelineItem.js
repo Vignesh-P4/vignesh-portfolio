@@ -49,15 +49,31 @@ export default function TimelineItem({ year, title, location, description }) {
             {location}
           </motion.p>
         </div>
-        <motion.p
-          className="mt-4 leading-7 text-slate-300"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          {description}
-        </motion.p>
+        {Array.isArray(description) ? (
+          <motion.ul
+            className="mt-4 list-inside space-y-3 text-slate-300"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            {description.map((item, idx) => (
+              <li key={idx} className="leading-7 before:mr-2 before:inline-block before:h-2 before:w-2 before:rounded-full before:bg-sky-400 before:align-middle">
+                {item}
+              </li>
+            ))}
+          </motion.ul>
+        ) : (
+          <motion.p
+            className="mt-4 leading-7 text-slate-300"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            {description}
+          </motion.p>
+        )}
       </div>
     </motion.div>
   );

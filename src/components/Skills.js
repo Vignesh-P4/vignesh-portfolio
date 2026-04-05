@@ -1,23 +1,65 @@
 'use client';
 
 import React from 'react';
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiJavascript,
+  SiNodedotjs,
+  SiPython,
+  SiMongodb,
+  SiPostgresql,
+  SiGraphql,
+  SiGit,
+  SiDocker,
+  SiAmazonaws,
+  SiVercel,
+  SiFigma
+} from 'react-icons/si';
+import { MdDevices, MdDesignServices, MdCode } from 'react-icons/md';
 
 const skillCategories = [
   {
     title: 'Frontend',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'JavaScript']
+    skills: [
+      { label: 'React', icon: SiReact },
+      { label: 'Next.js', icon: SiNextdotjs },
+      { label: 'TypeScript', icon: SiTypescript },
+      { label: 'Tailwind CSS', icon: SiTailwindcss },
+      { label: 'JavaScript', icon: SiJavascript }
+    ]
   },
   {
     title: 'Backend & Database',
-    skills: ['Node.js', 'Python', 'MongoDB', 'PostgreSQL', 'GraphQL']
+    skills: [
+      { label: 'Node.js', icon: SiNodedotjs },
+      { label: 'Python', icon: SiPython },
+      { label: 'MongoDB', icon: SiMongodb },
+      { label: 'PostgreSQL', icon: SiPostgresql },
+      { label: 'GraphQL', icon: SiGraphql }
+    ]
   },
   {
     title: 'Tools & Platforms',
-    skills: ['Git', 'Docker', 'AWS', 'Vercel', 'VS Code']
+    skills: [
+      { label: 'Git', icon: SiGit },
+      { label: 'Docker', icon: SiDocker },
+      { label: 'AWS', icon: SiAmazonaws },
+      { label: 'Vercel', icon: SiVercel },
+      { label: 'VS Code', icon: MdCode }
+    ]
   },
   {
     title: 'Design & UX',
-    skills: ['Figma', 'Adobe XD', 'UI/UX Design', 'Responsive Design', 'Prototyping']
+    skills: [
+      { label: 'Figma', icon: SiFigma },
+      { label: 'Adobe XD', icon: MdDesignServices },
+      { label: 'UI/UX Design', icon: MdDesignServices },
+      { label: 'Responsive Design', icon: MdDevices },
+      { label: 'Prototyping', icon: MdDesignServices }
+    ]
   }
 ];
 
@@ -38,16 +80,26 @@ export default function Skills() {
             <div key={category.title} className="glass-card p-8 hover-lift">
               <h3 className="mb-6 text-xl font-semibold text-white">{category.title}</h3>
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill}
-                    className="group flex flex-col items-center justify-center rounded-xl border border-slate-700/50 bg-slate-800/50 p-4 transition-all duration-300 hover:border-sky-500/40 hover:bg-slate-800/80"
-                  >
-                    <span className="text-center text-sm font-medium text-slate-300 group-hover:text-white">
-                      {skill}
-                    </span>
-                  </div>
-                ))}
+                {category.skills.map((skillItem) => {
+                  const Icon = skillItem.icon;
+                  return (
+                    <div
+                      key={skillItem.label}
+                      className="group flex flex-col items-center justify-center rounded-xl border border-slate-700/50 bg-slate-800/50 p-4 transition-all duration-300 hover:border-sky-500/40 hover:bg-slate-800/80"
+                    >
+                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900/70 text-sky-300 transition-colors duration-300 group-hover:bg-sky-500/10 group-hover:text-sky-400">
+                        {Icon ? (
+                          <Icon className="h-6 w-6" />
+                        ) : (
+                          <span className="text-xs font-semibold text-white">?</span>
+                        )}
+                      </div>
+                      <span className="text-center text-sm font-medium text-slate-300 group-hover:text-white">
+                        {skillItem.label}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
