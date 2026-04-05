@@ -101,8 +101,8 @@ portfolio-vignesh/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/portfolio-vignesh.git
-   cd portfolio-vignesh
+   git clone https://github.com/Vignesh-P4/vignesh-portfolio.git
+   cd vignesh-portfolio
    ```
 
 2. **Install dependencies**
