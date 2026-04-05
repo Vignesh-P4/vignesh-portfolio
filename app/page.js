@@ -9,42 +9,83 @@ import Contact from '@/components/Contact';
 
 const education = [
   {
-    year: '2024',
-    title: 'B.Tech in Computer Science',
-    location: 'ABC Institute of Technology',
-    description: 'Graduated with a focus on software engineering, web development, and human-centered design.'
+    year: '2022 – 2026',
+    title: 'Bachelor’s Degree in Data Science',
+    location: 'Sreyas Institute of Engineering and Technology',
+    description: [
+      'Final-year Data Science student with a strong focus on AI, data analysis, and full-stack development.',
+      'Built real-world projects including AI financial assistant, health application, and IoT-based agriculture system.',
+      'Developed strong analytical thinking, programming, and problem-solving skills.',
+      'CGPA: 8.3'
+    ]
   }
 ];
 
 const experience = [
   {
-    year: '2025',
-    title: 'Senior Frontend Developer',
-    location: 'TechCorp Solutions',
-    description: 'Led a team of 4 developers in building scalable React applications.'
+    year: 'March 2026 – Present',
+    title: 'Software / AI Intern',
+    location: 'Startup Company',
+    description: [
+      'Working on building scalable web applications including CRM systems and e-commerce platforms.',
+      'Developing modules for lead management, sales tracking, and project workflows.',
+      'Integrating AI tools such as Generative AI and prompt-based automation.',
+      'Collaborating on UI/UX design using Figma and implementing responsive interfaces.',
+      'Contributing to real-world product development in a startup environment.'
+    ]
   },
   {
-    year: '2023',
-    title: 'UX Design Intern',
-    location: 'Design Studio Pro',
-    description: 'Collaborated in ideation sessions and produced high-fidelity prototypes.'
+    year: 'June 2025 – August 2025',
+    title: 'Data Analyst Intern',
+    location: 'ThinkMates',
+    description: [
+      'Performed data analysis using SQL, Excel, and Power BI.',
+      'Cleaned and processed datasets to extract meaningful insights.',
+      'Built dashboards to support data-driven decision making.',
+      'Improved data accuracy and reporting efficiency.',
+      'Collaborated with team members to understand business requirements.'
+    ]
+  },
+  {
+    year: '2020 – Present',
+    title: 'Private Tutor',
+    location: 'Self-employed',
+    description: [
+      'Taught students across multiple subjects and academic levels.',
+      'Helped students improve academic performance and exam results.',
+      'Developed strong communication, mentoring, and problem-solving skills.'
+    ]
   }
 ];
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    subtitle: 'Full-stack web application',
-    description: 'A modern e-commerce platform built with Next.js.',
-    tags: ['Next.js', 'Stripe', 'PostgreSQL'],
+    title: 'FYNX – AI Financial Assistant',
+    subtitle: 'AI-Powered Personal Finance Management',
+    description: 'Engineered an AI-powered financial assistant that revolutionizes personal finance management by analyzing bank statements and delivering personalized insights to optimize saving and budgeting decisions. Features intelligent expense tracking, categorization, and data-driven savings suggestions.',
+    tags: ['AI', 'Data Analysis', 'Web Development'],
+    link: 'https://github.com/Vignesh-P4/FYNX-Ai_Financial_Assistant'
+  },
+  {
+    title: 'Healthify – AI Health Assistant',
+    subtitle: 'AI-Driven Health Guidance Platform',
+    description: 'Created an AI-driven health platform that empowers users with instant, reliable health guidance through an intelligent chatbot and comprehensive educational resources. Designed with scalable architecture for seamless doctor consultation integration.',
+    tags: ['AI', 'Web Application Development'],
+    link: 'https://github.com/Vignesh-P4/Healthify-AI_Health_Assistant'
+  },
+  {
+    title: 'SmartAgriTech – IoT Agriculture System',
+    subtitle: 'IoT-Based Environmental Monitoring',
+    description: 'Designed an innovative IoT-based agriculture system that provides farmers with real-time environmental monitoring and data-driven insights to maximize resource efficiency and productivity through sensor-driven decision support.',
+    tags: ['IoT', 'Sensors', 'Data Monitoring'],
     link: '#projects'
   },
   {
-    title: 'TaskFlow Pro',
-    subtitle: 'Productivity dashboard',
-    description: 'A clean task management app with real-time collaboration.',
-    tags: ['React', 'Firebase', 'Material-UI'],
-    link: '#projects'
+    title: 'Personal Portfolio Website',
+    subtitle: 'Modern Developer Portfolio',
+    description: 'Built a modern, responsive portfolio website that showcases professional skills and projects through clean design, smooth animations, and integrated contact features to enhance visibility and attract opportunities.',
+    tags: ['Next.js', 'Tailwind CSS', 'React'],
+    link: 'https://github.com/Vignesh-P4/vignesh-portfolio'
   }
 ];
 
