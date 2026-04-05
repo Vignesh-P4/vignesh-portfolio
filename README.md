@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Vignesh - Full Stack Developer Portfolio
 
 A modern, production-ready portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion. Features smooth animations, responsive design, and a clean component-based architecture.
@@ -101,8 +102,8 @@ portfolio-vignesh/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Vignesh-P4/vignesh-portfolio.git
-   cd vignesh-portfolio
+   git clone https://github.com/yourusername/portfolio-vignesh.git
+   cd portfolio-vignesh
    ```
 
 2. **Install dependencies**
@@ -189,3 +190,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **Built with ❤️ by Vignesh**
+=======
+# vignesh-portfolio
+Modern personal portfolio built with Next.js and Tailwind CSS showcasing my projects, skills, and experience.
+>>>>>>> cda094bbeba883224d177304ee0ad454f8007c1e

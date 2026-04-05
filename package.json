@@ -20,5 +20,10 @@
     "autoprefixer": "10.4.19",
     "postcss": "8.4.35",
     "tailwindcss": "3.4.4"
-  }
+  },
+  "description": "<<<<<<< HEAD\r # Vignesh - Full Stack Developer Portfolio",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

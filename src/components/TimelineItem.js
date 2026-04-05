@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 
 export default function TimelineItem({ year, title, location, description }) {
