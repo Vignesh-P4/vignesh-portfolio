@@ -96,11 +96,11 @@ export default function Contact() {
             <div className="mt-12 grid gap-6 sm:grid-cols-3">
               <div className="text-center">
                 <h4 className="font-semibold text-white">Location</h4>
-                <p className="mt-2 text-slate-400">San Francisco, CA</p>
+                <p className="mt-2 text-slate-400">Hyderabad, Telangana, India</p>
               </div>
               <div className="text-center">
                 <h4 className="font-semibold text-white">Email</h4>
-                <p className="mt-2 text-slate-400">hello@vignesh.com</p>
+                <p className="mt-2 text-slate-400">vigneshpobbathi@gmail.com</p>
               </div>
               <div className="text-center">
                 <h4 className="font-semibold text-white">Status</h4>
