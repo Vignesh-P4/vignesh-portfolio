@@ -65,28 +65,36 @@ const projects = [
     subtitle: 'AI-Powered Personal Finance Management',
     description: 'Engineered an AI-powered financial assistant that revolutionizes personal finance management by analyzing bank statements and delivering personalized insights to optimize saving and budgeting decisions. Features intelligent expense tracking, categorization, and data-driven savings suggestions.',
     tags: ['AI', 'Data Analysis', 'Web Development'],
-    link: 'https://github.com/Vignesh-P4/FYNX-Ai_Financial_Assistant'
+    link: 'https://github.com/Vignesh-P4/FYNX-Ai_Financial_Assistant',
+    videoUrl: '/videos/fynx-demo.mp4',
+    imageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Healthify – AI Health Assistant',
     subtitle: 'AI-Driven Health Guidance Platform',
     description: 'Created an AI-driven health platform that empowers users with instant, reliable health guidance through an intelligent chatbot and comprehensive educational resources. Designed with scalable architecture for seamless doctor consultation integration.',
     tags: ['AI', 'Web Application Development'],
-    link: 'https://github.com/Vignesh-P4/Healthify-AI_Health_Assistant'
+    link: 'https://github.com/Vignesh-P4/Healthify-AI_Health_Assistant',
+    videoUrl: '/videos/healthify-demo.mp4',
+    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'SmartAgriTech – IoT Agriculture System',
     subtitle: 'IoT-Based Environmental Monitoring',
     description: 'Designed an innovative IoT-based agriculture system that provides farmers with real-time environmental monitoring and data-driven insights to maximize resource efficiency and productivity through sensor-driven decision support.',
     tags: ['IoT', 'Sensors', 'Data Monitoring'],
-    link: '#projects'
+    link: '#projects',
+    videoUrl: '/videos/smartagritech-demo.mp4',
+    imageUrl: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Personal Portfolio Website',
     subtitle: 'Modern Developer Portfolio',
     description: 'Built a modern, responsive portfolio website that showcases professional skills and projects through clean design, smooth animations, and integrated contact features to enhance visibility and attract opportunities.',
     tags: ['Next.js', 'Tailwind CSS', 'React'],
-    link: 'https://github.com/Vignesh-P4/vignesh-portfolio'
+    link: 'https://github.com/Vignesh-P4/vignesh-portfolio',
+    videoUrl: '/videos/portfolio-demo.mp4',
+    imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80'
   }
 ];
 

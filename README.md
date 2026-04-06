@@ -11,6 +11,8 @@ A modern, production-ready portfolio website built with Next.js 14, Tailwind CSS
 - **Performance Optimized**: Fast loading with optimized images and code splitting
 - **SEO Ready**: Proper meta tags, semantic HTML, and accessibility features
 - **Component Architecture**: Clean, reusable, and maintainable components
+- **Video Previews**: Interactive project cards with video demos on hover
+- **Premium UX**: Hover effects, smooth transitions, and modern interactions
 
 ## 🎨 Design Highlights
 
@@ -19,6 +21,32 @@ A modern, production-ready portfolio website built with Next.js 14, Tailwind CSS
 - **Typography**: Inter font family for excellent readability
 - **Dark Theme**: Professional dark color scheme
 - **Interactive Elements**: Hover effects, smooth scrolling, and animated icons
+
+## 🎬 Video Preview Feature
+
+The portfolio includes an advanced project showcase with video previews:
+
+### ✨ Features:
+- **Static Images by Default**: Fast loading with beautiful project thumbnails
+- **Video Previews on Hover**: Seamless transition to demo videos when hovering
+- **Interactive Overlay**: Project title and action buttons appear on hover
+- **Smooth Animations**: Premium hover effects with scale and blur transitions
+- **Responsive Design**: Optimized for all screen sizes and devices
+- **Performance Optimized**: Videos load on demand with proper preloading
+
+### 📁 Video Files:
+Place your project demo videos in `public/videos/`:
+- `fynx-demo.mp4` - FYNX AI Financial Assistant
+- `healthify-demo.mp4` - Healthify AI Health Assistant
+- `smartagritech-demo.mp4` - SmartAgriTech IoT System
+- `portfolio-demo.mp4` - Portfolio Website Demo
+
+### 🎯 Video Specifications:
+- **Format**: MP4 (H.264 codec)
+- **Duration**: 10-30 seconds (looping)
+- **Resolution**: 1920x1080 (16:9 aspect ratio)
+- **File Size**: Under 5MB per video
+- **Attributes**: Autoplay, muted, loop enabled
 
 ## 🛠️ Tech Stack
 

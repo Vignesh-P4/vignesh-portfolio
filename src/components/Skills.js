@@ -14,10 +14,10 @@ import {
   SiGraphql,
   SiGit,
   SiDocker,
-  SiAmazonaws,
   SiVercel,
   SiFigma
 } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 import { MdDevices, MdDesignServices, MdCode } from 'react-icons/md';
 
 const skillCategories = [
@@ -46,7 +46,7 @@ const skillCategories = [
     skills: [
       { label: 'Git', icon: SiGit },
       { label: 'Docker', icon: SiDocker },
-      { label: 'AWS', icon: SiAmazonaws },
+      { label: 'AWS', icon: FaAws },
       { label: 'Vercel', icon: SiVercel },
       { label: 'VS Code', icon: MdCode }
     ]

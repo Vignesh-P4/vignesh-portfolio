@@ -62,6 +62,24 @@ body {
     0 -1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 
+/* Video optimization */
+video {
+  @apply transition-all duration-300;
+}
+
+video:hover {
+  transform: scale(1.02);
+}
+
+/* Project card hover effects */
+.project-card-media {
+  @apply transition-all duration-500 ease-out;
+}
+
+.project-card-media:hover {
+  transform: scale(1.05);
+}
+
 /* Section transitions */
 section {
   @apply transition-all duration-700 ease-out;
