@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Education', href: '#education' },
@@ -29,9 +30,23 @@ export default function Navbar() {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Use a more reliable scroll method
+      const elementTop = element.offsetTop;
+      const headerHeight = 80;
+      const scrollPosition = elementTop - headerHeight;
+
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
+
+      // Close menu after scroll animation starts
+      setTimeout(() => {
+        setIsOpen(false);
+      }, 300);
+    } else {
+      setIsOpen(false);
     }
-    setIsOpen(false);
   };
 
   return (
@@ -103,15 +118,15 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
             className="border-t border-slate-800 bg-slate-950/95 px-6 py-4 md:hidden"
           >
             <div className="flex flex-col gap-3">
               {navItems.map((item, index) => (
-                <motion.a
+                <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => {
@@ -119,12 +134,9 @@ export default function Navbar() {
                     scrollToSection(item.href);
                   }}
                   className="rounded-2xl px-4 py-3 text-sm text-slate-200 transition hover:bg-slate-900 hover:text-white"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
                   {item.label}
-                </motion.a>
+                </a>
               ))}
             </div>
           </motion.div>
