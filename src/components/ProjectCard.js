@@ -4,9 +4,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { useState, useRef } from 'react';
 
-export default function ProjectCard({ title, subtitle, description, tags, link, videoUrl, imageUrl }) {
+const cardVariants = {
+  hidden: (direction) => ({
+    opacity: 0,
+    scale: 0.95,
+    x: direction * 70,
+    rotate: direction * 3
+  }),
+  visible: {
+    opacity: 1,
+    scale: 1,
+    x: 0,
+    rotate: 0,
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+  }
+};
+
+export default function ProjectCard({ title, subtitle, description, tags, link, videoUrl, imageUrl, index }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const videoRef = useRef(null);
+
+  const direction = index % 2 === 0 ? -1 : 1;
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -17,81 +36,88 @@ export default function ProjectCard({ title, subtitle, description, tags, link, 
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+    setTilt({ x: 0, y: 0 });
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
   };
 
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rotateY = ((x / rect.width) * 20 - 10) * 0.4;
+    const rotateX = ((y / rect.height) * 20 - 10) * -0.4;
+    setTilt({ x: rotateX, y: rotateY });
+  };
+
   return (
     <motion.article
-      className="group glass-card hover-lift relative overflow-hidden transition-all duration-500"
+      className="group glass-card relative overflow-hidden transition-all duration-500"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.35 }}
+      custom={direction}
       whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
       onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      style={{ perspective: 1200 }}
     >
+      <motion.div
+        style={{
+          transformStyle: 'preserve-3d',
+          rotateX: tilt.x,
+          rotateY: tilt.y
+        }}
+      >
       {/* Media Container */}
       <div className="project-card-media relative aspect-video overflow-hidden rounded-t-2xl bg-slate-900">
-        {/* Static Image (Default) */}
-        <motion.div
-          className="absolute inset-0"
-          animate={{ opacity: isHovered ? 0 : 1 }}
-          transition={{ duration: 0.3 }}
-        >
-          <img
-            src={imageUrl}
-            alt={title}
-            className="h-full w-full object-cover"
-          />
-        </motion.div>
-
-        {/* Video Preview (On Hover) */}
-        <AnimatePresence>
-          {isHovered && videoUrl && (
-            <motion.div
-              className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <video
-                ref={videoRef}
-                src={videoUrl}
-                className="h-full w-full object-cover"
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <video
+          ref={videoRef}
+          src={videoUrl}
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
+          style={{ opacity: isHovered ? 1 : 0 }}
+        />
+        <motion.img
+          src={imageUrl}
+          alt={title}
+          className="h-full w-full object-cover"
+          initial={{ scale: 1.02 }}
+          whileInView={{ scale: 1 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/25 to-transparent opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent opacity-80" />
 
         {/* Hover Overlay */}
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              className="absolute inset-0 flex items-center justify-center bg-gray-900/70 backdrop-blur-sm"
+              className="absolute inset-0 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.25 }}
             >
               <div className="text-center">
                 <motion.h3
                   className="mb-4 text-2xl font-bold text-white"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: 0.08, duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {title}
                 </motion.h3>
-                <div className="flex gap-3 justify-center">
+                <div className="flex flex-wrap justify-center gap-3">
                   <motion.a
                     href={link}
                     className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-600"
@@ -99,19 +125,19 @@ export default function ProjectCard({ title, subtitle, description, tags, link, 
                     whileTap={{ scale: 0.95 }}
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
+                    transition={{ delay: 0.18, duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                   >
                     View Project
                     <FaExternalLinkAlt className="text-xs" />
                   </motion.a>
                   <motion.a
                     href={link}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
+                    transition={{ delay: 0.24, duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <FaGithub className="text-sm" />
                     GitHub
@@ -147,6 +173,7 @@ export default function ProjectCard({ title, subtitle, description, tags, link, 
           ))}
         </div>
       </div>
+      </motion.div>
     </motion.article>
   );
 }

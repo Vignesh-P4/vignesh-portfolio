@@ -13,8 +13,13 @@ html {
 }
 
 body {
-  @apply bg-black text-white antialiased;
+  @apply text-white antialiased;
   font-family: 'Inter', system-ui, sans-serif;
+  background-color: #02040a;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08), transparent 18%),
+    radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.05), transparent 16%),
+    radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.05), transparent 20%);
 }
 
 * {
@@ -45,13 +50,14 @@ body {
 /* Hero background with better overlay */
 .hero-background {
   background-image:
-    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.18), transparent 25%),
-    linear-gradient(180deg, rgba(7, 10, 27, 0.45), rgba(7, 10, 27, 0.85)),
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.14), transparent 22%),
+    linear-gradient(180deg, rgba(7, 10, 27, 0.55), rgba(7, 10, 27, 0.95)),
     url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  background-blend-mode: overlay;
 }
 
 /* Enhanced glass card with better blur and border */
