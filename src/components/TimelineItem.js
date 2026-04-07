@@ -12,16 +12,16 @@ export default function TimelineItem({ year, title, location, description }) {
       viewport={{ once: true }}
     >
       {/* Timeline dot */}
-      <div className="absolute left-6 top-8 h-3 w-3 rounded-full bg-sky-400 shadow-glow sm:left-8"></div>
+      <div className="absolute left-6 top-8 h-3 w-3 rounded-full bg-cyan-400 shadow-glow sm:left-8"></div>
 
       {/* Timeline line */}
-      <div className="absolute left-[23px] top-12 h-full w-px bg-gradient-to-b from-sky-400 to-transparent opacity-50 sm:left-[31px]"></div>
+      <div className="absolute left-[23px] top-12 h-full w-px bg-gradient-to-b from-cyan-400 to-transparent opacity-50 sm:left-[31px]"></div>
 
       <div className="ml-8 sm:ml-12">
-        <div className="flex flex-col gap-4 border-b border-slate-700/50 pb-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 border-b border-gray-700/50 pb-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <motion.p
-              className="text-sm uppercase tracking-[0.28em] text-sky-300"
+              className="text-sm uppercase tracking-[0.28em] text-cyan-400"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -40,7 +40,7 @@ export default function TimelineItem({ year, title, location, description }) {
             </motion.h3>
           </div>
           <motion.p
-            className="text-sm text-slate-400"
+            className="text-sm text-gray-400"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -51,21 +51,21 @@ export default function TimelineItem({ year, title, location, description }) {
         </div>
         {Array.isArray(description) ? (
           <motion.ul
-            className="mt-4 list-inside space-y-3 text-slate-300"
+            className="mt-4 list-inside space-y-3 text-gray-300"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
           >
             {description.map((item, idx) => (
-              <li key={idx} className="leading-7 before:mr-2 before:inline-block before:h-2 before:w-2 before:rounded-full before:bg-sky-400 before:align-middle">
+              <li key={idx} className="leading-7 before:mr-2 before:inline-block before:h-2 before:w-2 before:rounded-full before:bg-gray-400 before:align-middle">
                 {item}
               </li>
             ))}
           </motion.ul>
         ) : (
           <motion.p
-            className="mt-4 leading-7 text-slate-300"
+            className="mt-4 leading-7 text-gray-300"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}

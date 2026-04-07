@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply bg-black text-white antialiased;
   font-family: 'Inter', system-ui, sans-serif;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 ::selection {
-  @apply bg-sky-500/30 text-sky-100;
+  @apply bg-gray-500/30 text-white;
 }
 
 /* Custom scrollbar */
@@ -31,22 +31,23 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-900;
+  @apply bg-gray-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-700 rounded-full;
+  @apply bg-gray-700 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-600;
+  @apply bg-gray-600;
 }
 
 /* Hero background with better overlay */
 .hero-background {
   background-image:
-    linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.8)),
-    linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%),
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.18), transparent 25%),
+    linear-gradient(180deg, rgba(7, 10, 27, 0.45), rgba(7, 10, 27, 0.85)),
     url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80');
   background-position: center;
   background-size: cover;
@@ -55,11 +56,10 @@ body {
 
 /* Enhanced glass card with better blur and border */
 .glass-card {
-  @apply bg-slate-900/80 border border-slate-700/60 backdrop-blur-2xl shadow-2xl;
+  @apply bg-slate-950/85 border border-slate-800/70 backdrop-blur-3xl shadow-2xl;
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    0 1px 0 rgba(255, 255, 255, 0.1) inset,
-    0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+    0 18px 60px rgba(15, 23, 42, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.08) inset;
 }
 
 /* Video optimization */
@@ -112,7 +112,7 @@ section {
 
 /* Gradient text */
 .gradient-text {
-  @apply bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 bg-clip-text text-transparent;
 }
 
 /* Skill icon hover */
@@ -121,7 +121,7 @@ section {
 }
 
 .skill-icon:hover {
-  @apply scale-110 text-sky-400;
+  @apply scale-110 text-cyan-300;
 }
 
 /* Social icon animations */
@@ -130,17 +130,17 @@ section {
 }
 
 .social-icon:hover {
-  @apply scale-125 text-sky-400;
+  @apply scale-125 text-cyan-300;
 }
 
 /* Button hover effects */
 .btn-primary {
-  @apply relative overflow-hidden bg-gradient-to-r from-sky-500 to-purple-600;
+  @apply relative overflow-hidden bg-gradient-to-r from-cyan-500 via-sky-500 to-violet-500;
 }
 
 .btn-primary::before {
   content: '';
-  @apply absolute inset-0 bg-gradient-to-r from-purple-600 to-sky-500 opacity-0 transition-opacity duration-300;
+  @apply absolute inset-0 bg-gradient-to-r from-violet-500 via-sky-500 to-cyan-500 opacity-0 transition-opacity duration-300;
 }
 
 .btn-primary:hover::before {
@@ -148,9 +148,9 @@ section {
 }
 
 .btn-secondary {
-  @apply relative overflow-hidden border border-slate-600 bg-slate-900/80 backdrop-blur-sm;
+  @apply relative overflow-hidden border border-slate-700 bg-slate-950/80 backdrop-blur-sm;
 }
 
 .btn-secondary:hover {
-  @apply border-sky-400/50 bg-slate-800/80;
+  @apply border-cyan-500/50 bg-slate-900/90;
 }

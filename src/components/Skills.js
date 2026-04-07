@@ -68,9 +68,9 @@ export default function Skills() {
     <section id="skills" className="px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
-          <p className="text-sm uppercase tracking-[0.36em] text-sky-300">Expertise</p>
+          <p className="text-sm uppercase tracking-[0.36em] text-gray-300">Expertise</p>
           <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Skills & Technologies</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+          <p className="mx-auto mt-4 max-w-2xl text-gray-400">
             A comprehensive toolkit for building modern, scalable, and user-centric applications
           </p>
         </div>
@@ -85,16 +85,16 @@ export default function Skills() {
                   return (
                     <div
                       key={skillItem.label}
-                      className="group flex flex-col items-center justify-center rounded-xl border border-slate-700/50 bg-slate-800/50 p-4 transition-all duration-300 hover:border-sky-500/40 hover:bg-slate-800/80"
+                      className="group flex flex-col items-center justify-center rounded-xl border border-slate-800/50 bg-slate-900/70 p-4 transition-all duration-300 hover:border-cyan-500/40 hover:bg-slate-900/90"
                     >
-                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900/70 text-sky-300 transition-colors duration-300 group-hover:bg-sky-500/10 group-hover:text-sky-400">
+                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900/70 text-cyan-300 transition-colors duration-300 group-hover:bg-cyan-500/10 group-hover:text-cyan-300">
                         {Icon ? (
                           <Icon className="h-6 w-6" />
                         ) : (
                           <span className="text-xs font-semibold text-white">?</span>
                         )}
                       </div>
-                      <span className="text-center text-sm font-medium text-slate-300 group-hover:text-white">
+                      <span className="text-center text-sm font-medium text-gray-300 group-hover:text-white">
                         {skillItem.label}
                       </span>
                     </div>

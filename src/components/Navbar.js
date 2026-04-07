@@ -56,8 +56,8 @@ export default function Navbar() {
       transition={{ duration: 0.8 }}
       className={`fixed top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-300 ${
         isScrolled
-          ? 'border-slate-800/80 bg-slate-950/95 shadow-soft'
-          : 'border-transparent bg-slate-950/80'
+          ? 'border-gray-800/80 bg-black/95 shadow-soft'
+          : 'border-transparent bg-black/80'
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
@@ -67,7 +67,7 @@ export default function Navbar() {
             e.preventDefault();
             scrollToSection('#home');
           }}
-          className="text-lg font-bold tracking-tight text-white transition hover:text-sky-400"
+          className="text-lg font-bold tracking-tight text-white transition hover:text-cyan-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -83,7 +83,7 @@ export default function Navbar() {
                 e.preventDefault();
                 scrollToSection(item.href);
               }}
-              className="relative text-sm text-slate-300 transition hover:text-white"
+              className="relative text-sm text-gray-300 transition hover:text-white"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -91,7 +91,7 @@ export default function Navbar() {
             >
               {item.label}
               <motion.div
-                className="absolute -bottom-1 left-0 h-px w-0 bg-sky-400"
+                className="absolute -bottom-1 left-0 h-px w-0 bg-cyan-400"
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
@@ -100,7 +100,7 @@ export default function Navbar() {
         </nav>
 
         <motion.button
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-200 transition hover:border-slate-500 hover:text-white md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-gray-900 text-gray-200 transition hover:border-gray-500 hover:text-white md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation"
           whileTap={{ scale: 0.95 }}
@@ -122,7 +122,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="border-t border-slate-800 bg-slate-950/95 px-6 py-4 md:hidden"
+            className="border-t border-gray-800 bg-black/95 px-6 py-4 md:hidden"
           >
             <div className="flex flex-col gap-3">
               {navItems.map((item, index) => (
@@ -133,7 +133,7 @@ export default function Navbar() {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="rounded-2xl px-4 py-3 text-sm text-slate-200 transition hover:bg-slate-900 hover:text-white"
+                  className="rounded-2xl px-4 py-3 text-sm text-gray-200 transition hover:bg-gray-900 hover:text-white"
                 >
                   {item.label}
                 </a>

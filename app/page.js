@@ -107,30 +107,43 @@ export default function Home() {
 
       <main>
         <section id="home" className="hero-background relative min-h-screen px-6 py-24 sm:px-10 lg:px-16">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/20 via-slate-950/40 to-slate-950/80"></div>
-          <div className="relative mx-auto flex max-w-6xl flex-col justify-center gap-10 text-center">
-            <div className="glass-card rounded-3xl p-8 shadow-soft-lg sm:p-12">
-              <p className="text-sm uppercase tracking-[0.36em] text-sky-300">Hello, I'm Vignesh</p>
-              <h1 className="mt-4 text-4xl font-bold text-white sm:text-6xl lg:text-7xl">
-                Crafting Digital
-                <span className="block gradient-text">Experiences</span>
-              </h1>
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-                Full-stack developer and UI/UX designer passionate about creating beautiful web applications.
-              </p>
-              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <a
-                  href="#projects"
-                  className="btn-primary inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold text-white transition-all duration-300"
-                >
-                  View My Work
-                </a>
-                <a
-                  href="#contact"
-                  className="btn-secondary inline-flex items-center justify-center rounded-full border border-slate-600 px-8 py-4 text-sm font-semibold text-slate-100 transition-all duration-300"
-                >
-                  Get In Touch
-                </a>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/40 to-black/80"></div>
+          <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.45fr_1fr] lg:items-center">
+            <div className="flex flex-col justify-center text-center lg:text-left">
+              <div className="glass-card rounded-3xl p-8 shadow-soft-lg sm:p-12">
+                <p className="text-sm uppercase tracking-[0.36em] text-cyan-300">Hello, I'm Vignesh</p>
+                <h1 className="mt-4 text-4xl font-bold text-white sm:text-6xl lg:text-7xl">
+                  Crafting digital
+                  <span className="block gradient-text">solutions that shine</span>
+                </h1>
+                <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-300 sm:text-xl lg:mx-0">
+                  Full-stack developer and UI/UX designer shaping immersive experiences with modern web applications, data-driven intelligence, and polished visual systems.
+                </p>
+                <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:items-start">
+                  <a
+                    href="#projects"
+                    className="btn-primary inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold text-white transition-all duration-300"
+                  >
+                    View My Work
+                  </a>
+                  <a
+                    href="#contact"
+                    className="btn-secondary inline-flex items-center justify-center rounded-full border border-cyan-500/30 px-8 py-4 text-sm font-semibold text-white transition-all duration-300"
+                  >
+                    Get In Touch
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="absolute -left-12 -top-10 h-40 w-40 rounded-full bg-cyan-500/15 blur-3xl" />
+              <div className="absolute -right-10 top-16 h-56 w-56 rounded-full bg-violet-500/15 blur-3xl" />
+              <div className="glass-card relative overflow-hidden rounded-[2rem] border border-cyan-500/20 bg-slate-950/80 p-8 shadow-soft-lg">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-cyan-500/15 via-slate-900 to-violet-500/15 p-6">
+                  <div className="absolute inset-0 rounded-[1.75rem] border border-white/10" />
+                  <div className="absolute -bottom-8 left-6 h-24 w-24 rounded-full bg-cyan-500/20 blur-3xl" />
+                  <div className="absolute top-6 right-6 h-20 w-20 rounded-full bg-violet-500/20 blur-3xl" />
+                </div>
               </div>
             </div>
           </div>
@@ -155,7 +168,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="text-slate-300 text-lg leading-relaxed"
+                  className="text-gray-300 text-lg leading-relaxed"
                 >
                   I specialize in combining data, <span className="gradient-text font-semibold">AI</span>, and <span className="gradient-text font-semibold">full-stack development</span> to create real-world solutions. My work includes developing an AI financial assistant, a health-focused platform, and an IoT-based agriculture system—each designed to solve practical problems.
                 </motion.p>
@@ -164,7 +177,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                   viewport={{ once: true }}
-                  className="text-slate-300 text-lg leading-relaxed"
+                  className="text-gray-300 text-lg leading-relaxed"
                 >
                   Currently, as a Software/AI Intern, I am actively contributing to building scalable CRM systems, e-commerce platforms, and AI-powered features in a startup environment.
                 </motion.p>
@@ -173,7 +186,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                   viewport={{ once: true }}
-                  className="text-slate-300 text-lg leading-relaxed"
+                  className="text-gray-300 text-lg leading-relaxed"
                 >
                   I believe in continuous learning, strong problem-solving, and building technology that creates real value.
                 </motion.p>
@@ -182,9 +195,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
                   viewport={{ once: true }}
-                  className="pt-4 border-t border-slate-700/50"
+                  className="pt-4 border-t border-gray-700/50"
                 >
-                  <p className="text-slate-400 text-sm">
+                  <p className="text-gray-400 text-sm">
                     📍 Hyderabad, Telangana, India
                   </p>
                 </motion.div>
@@ -234,7 +247,7 @@ export default function Home() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {activities.map((item) => (
                 <div key={item} className="glass-card p-6 text-center">
-                  <p className="text-slate-200 leading-6">{item}</p>
+                  <p className="text-gray-200 leading-6">{item}</p>
                 </div>
               ))}
             </div>

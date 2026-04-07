@@ -32,7 +32,7 @@ export default function ProjectCard({ title, subtitle, description, tags, link, 
       onMouseLeave={handleMouseLeave}
     >
       {/* Media Container */}
-      <div className="project-card-media relative aspect-video overflow-hidden rounded-t-2xl bg-slate-800">
+      <div className="project-card-media relative aspect-video overflow-hidden rounded-t-2xl bg-slate-900">
         {/* Static Image (Default) */}
         <motion.div
           className="absolute inset-0"
@@ -70,13 +70,13 @@ export default function ProjectCard({ title, subtitle, description, tags, link, 
         </AnimatePresence>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/25 to-transparent opacity-70"></div>
 
         {/* Hover Overlay */}
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              className="absolute inset-0 flex items-center justify-center bg-slate-900/70 backdrop-blur-sm"
+              className="absolute inset-0 flex items-center justify-center bg-gray-900/70 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -94,7 +94,7 @@ export default function ProjectCard({ title, subtitle, description, tags, link, 
                 <div className="flex gap-3 justify-center">
                   <motion.a
                     href={link}
-                    className="inline-flex items-center gap-2 rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-600"
+                    className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-600"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ y: 20, opacity: 0 }}
@@ -125,20 +125,20 @@ export default function ProjectCard({ title, subtitle, description, tags, link, 
 
       {/* Content */}
       <div className="p-6">
-        <div className="mb-4 text-sm uppercase tracking-[0.24em] text-sky-300">
+        <div className="mb-4 text-sm uppercase tracking-[0.24em] text-gray-300">
           {subtitle}
         </div>
-        <h3 className="text-xl font-semibold text-white group-hover:text-sky-300 transition-colors duration-300">
+        <h3 className="text-xl font-semibold text-white group-hover:text-gray-300 transition-colors duration-300">
           {title}
         </h3>
-        <p className="mt-3 leading-6 text-slate-300 group-hover:text-slate-200 transition-colors duration-300">
+        <p className="mt-3 leading-6 text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
           {description}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <motion.span
               key={tag}
-              className="rounded-full bg-white/5 px-3 py-1 text-xs text-slate-300 border border-slate-700/50 group-hover:border-sky-500/30 transition-colors duration-300"
+              className="rounded-full bg-white/5 px-3 py-1 text-xs text-gray-300 border border-slate-700/50 group-hover:border-cyan-500/30 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

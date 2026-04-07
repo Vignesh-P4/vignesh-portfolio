@@ -11,12 +11,12 @@ module.exports = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        soft: "0 30px 80px rgba(15, 23, 42, 0.25)",
-        'soft-lg': "0 40px 120px rgba(15, 23, 42, 0.35)",
-        'glow': "0 0 20px rgba(14, 165, 233, 0.3)",
+        soft: "0 30px 80px rgba(0, 0, 0, 0.25)",
+        'soft-lg': "0 40px 120px rgba(0, 0, 0, 0.35)",
+        'glow': "0 0 20px rgba(128, 128, 128, 0.3)",
       },
       backgroundImage: {
-        hero: "linear-gradient(rgba(15,23,42,0.64), rgba(15,23,42,0.88)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80')",
+        hero: "linear-gradient(rgba(0,0,0,0.64), rgba(0,0,0,0.88)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       animation: {
